@@ -1,0 +1,146 @@
+{
+  "raw_feature_count": 38,
+  "raw_feature_columns": [
+    "lab_prev_30d",
+    "lab_prev_365d",
+    "micro_prev_30d",
+    "micro_prev_365d",
+    "icu_procedure_prev_30d",
+    "icu_procedure_prev_365d",
+    "ed_visits_prev_30d",
+    "ed_visits_prev_365d",
+    "hospital_admissions_prev_30d",
+    "hospital_admissions_prev_365d",
+    "triage_acuity",
+    "triage_acuity_missing",
+    "triage_pain",
+    "triage_pain_missing",
+    "age_years",
+    "prior_inpatient_charlson_index",
+    "triage_resprate",
+    "triage_resprate_missing",
+    "triage_o2sat",
+    "triage_o2sat_missing",
+    "medrecon_prev_30d",
+    "medrecon_prev_365d",
+    "pyxis_prev_30d",
+    "pyxis_prev_365d",
+    "antibiotic_any_prev_365d",
+    "triage_sbp",
+    "triage_sbp_missing",
+    "triage_dbp",
+    "triage_dbp_missing",
+    "triage_heartrate",
+    "triage_heartrate_missing",
+    "triage_map",
+    "triage_shock_index",
+    "arrival_transport",
+    "triage_temperature_c",
+    "triage_temperature_c_missing",
+    "ams_flag_narrow",
+    "chiefcomplaint_missing"
+  ],
+  "domain_map": {
+    "D1_prior_testing_treatment": [
+      "lab_prev_30d",
+      "lab_prev_365d",
+      "micro_prev_30d",
+      "micro_prev_365d",
+      "icu_procedure_prev_30d",
+      "icu_procedure_prev_365d"
+    ],
+    "D2_prior_utilization": [
+      "ed_visits_prev_30d",
+      "ed_visits_prev_365d",
+      "hospital_admissions_prev_30d",
+      "hospital_admissions_prev_365d"
+    ],
+    "D3_triage_urgency_pain": [
+      "triage_acuity",
+      "triage_acuity_missing",
+      "triage_pain",
+      "triage_pain_missing"
+    ],
+    "D4_patient_vulnerability": [
+      "age_years",
+      "prior_inpatient_charlson_index"
+    ],
+    "D5_respiratory_status": [
+      "triage_resprate",
+      "triage_resprate_missing",
+      "triage_o2sat",
+      "triage_o2sat_missing"
+    ],
+    "D6_prior_medication_device": [
+      "medrecon_prev_30d",
+      "medrecon_prev_365d",
+      "pyxis_prev_30d",
+      "pyxis_prev_365d",
+      "antibiotic_any_prev_365d"
+    ],
+    "D7_circulatory_status": [
+      "triage_sbp",
+      "triage_sbp_missing",
+      "triage_dbp",
+      "triage_dbp_missing",
+      "triage_heartrate",
+      "triage_heartrate_missing",
+      "triage_map",
+      "triage_shock_index"
+    ],
+    "D8_arrival_mode": [
+      "arrival_transport"
+    ],
+    "D9_thermal_inflammatory": [
+      "triage_temperature_c",
+      "triage_temperature_c_missing"
+    ],
+    "D10_consciousness_neurologic": [
+      "ams_flag_narrow",
+      "chiefcomplaint_missing"
+    ]
+  },
+  "selection": {
+    "primary_candidate": "xgb_medium",
+    "alternative_candidate": "logistic_c1",
+    "unconstrained_best_candidate": "xgb_medium",
+    "selection_rule": "minimum mean grouped-CV Brier score",
+    "best_candidate_brier_se": 0.00043435876508841735,
+    "n_splits": 3,
+    "random_seed": 20260804,
+    "development_rows": 240124,
+    "development_subjects": 118058,
+    "input_partitions_loaded": [
+      "development"
+    ],
+    "elapsed_seconds": 40.8427640000009,
+    "locked_test_accessed": false
+  },
+  "preprocessing": {
+    "continuous": "development-median imputation then z standardization",
+    "counts": "zero imputation, log1p, then z standardization",
+    "binary": "constant-zero imputation",
+    "arrival_transport": "explicit missing level then development-fitted one-hot; unknown ignored"
+  },
+  "decision_thresholds": {
+    "values": [
+      0.2,
+      0.3,
+      0.4,
+      0.5
+    ],
+    "rule": "fixed probability cutoffs for reporting; not optimized on the locked test"
+  },
+  "calibration": "Platt logistic recalibration on logit probability using calibration split",
+  "libraries": {
+    "python": "3.12.7",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pandas": "2.2.2",
+    "numpy": "1.26.4",
+    "sklearn": "1.6.1",
+    "xgboost": "3.0.5",
+    "pyarrow": "16.1.0"
+  },
+  "patient_data_scope": "Credentialed MIMIC-IV/MIMIC-IV-ED data are not redistributed.",
+  "fitted_model_scope": "The fitted object is not included in the public repository."
+}

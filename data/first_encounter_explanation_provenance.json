@@ -1,0 +1,25 @@
+{
+  "analysis": "first chronological eligible encounter per patient",
+  "input_partition": "tuning",
+  "input_partition_role": "explanation/weight-estimation",
+  "all_explanation_rows": 59492,
+  "all_explanation_subjects": 29427,
+  "first_encounter_rows": 29427,
+  "first_encounter_subjects": 29427,
+  "selection_order": [
+    "subject_id",
+    "intime",
+    "stay_id"
+  ],
+  "primary_candidate": "xgb_medium",
+  "permutation_repeats": 20,
+  "bootstrap_repeats": 500,
+  "seed": 20260804,
+  "method": "joint raw-domain marginal permutation; Brier-loss increment; positive-part normalization; patient bootstrap",
+  "internal_evaluation_partition_loaded": false,
+  "patient_level_rows_written": false,
+  "feature_file_sha256": "ED851791DEF523622542413330E6EF0F1B2FCAC87E4B09085B787DB4D93FBCC7",
+  "model_artifact_sha256": "A2F463770DA00E8D3FB44CC6B944C8772A33E0CC4CB49769FC792D4E1E723061",
+  "pipeline_sha256": "82001DAD891970E51A3DDFB430004EA47BFC92138CADD7B93E17376939F4F82A",
+  "weights_sha256": "8B700950543AD020404978B87DC0078C7642B2A66B208264B97F0840ED0DCA1B"
+}

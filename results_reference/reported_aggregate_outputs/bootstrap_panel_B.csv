@@ -1,0 +1,6 @@
+﻿alternative_id,top_rank_frequency,median_rank,rank_p05,rank_p95,spotis_D0_mean,spotis_D0_p025,spotis_D0_p975,repeats,interpretation,site_id
+A1,0.0215,3.0,2.0,3.0,0.406580491769157,0.3561032054290168,0.45761279073228406,2000,conditional frequency under whole-DM and frozen-DDCDW empirical resampling,B
+A2,0.014,4.0,2.0,4.0,0.4566759981323592,0.3591389087522218,0.5436546325692838,2000,conditional frequency under whole-DM and frozen-DDCDW empirical resampling,B
+A3,0.0,5.0,5.0,5.0,0.5589664183551439,0.5192490427675208,0.6027378623865837,2000,conditional frequency under whole-DM and frozen-DDCDW empirical resampling,B
+A4,0.1755,2.0,1.0,4.0,0.39176344486681636,0.3141184675608165,0.4698451031730344,2000,conditional frequency under whole-DM and frozen-DDCDW empirical resampling,B
+A5,0.789,1.0,1.0,3.0,0.33595715823765476,0.26607463340498183,0.40796198970874037,2000,conditional frequency under whole-DM and frozen-DDCDW empirical resampling,B
