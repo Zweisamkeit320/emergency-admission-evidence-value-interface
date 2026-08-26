@@ -1,0 +1,31 @@
+Domain,Raw feature,Unavailable n,Unavailable %,Invalid/unparsed n,Analysis handling
+D1,lab_prev_30d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D1,lab_prev_365d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D1,micro_prev_30d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D1,micro_prev_365d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D1,icu_procedure_prev_30d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D1,icu_procedure_prev_365d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D2,ed_visits_prev_30d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D2,ed_visits_prev_365d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D2,hospital_admissions_prev_30d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D2,hospital_admissions_prev_365d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D3,triage_acuity,5732,1.4345,0,development-median imputation and standardization
+D3,triage_pain,36115,9.0384,24809,development-median imputation and standardization
+D4,age_years,0,0.0,0,development-median imputation and standardization
+D4,prior_inpatient_charlson_index,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D5,triage_resprate,18256,4.5689,43,development-median imputation and standardization
+D5,triage_o2sat,18538,4.6395,131,development-median imputation and standardization
+D6,medrecon_prev_30d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D6,medrecon_prev_365d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D6,pyxis_prev_30d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D6,pyxis_prev_365d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D6,antibiotic_any_prev_365d,0,0.0,0,zero means no qualifying BIDMC record observed; external care may be absent
+D7,triage_sbp,16413,4.1076,195,development-median imputation and standardization
+D7,triage_dbp,17531,4.3874,553,development-median imputation and standardization
+D7,triage_heartrate,15137,3.7883,25,development-median imputation and standardization
+D7,triage_map,17618,4.4092,0,development-median imputation and standardization
+D7,triage_shock_index,17192,4.3026,0,development-median imputation and standardization
+D8,arrival_transport,7505,1.8783,0,explicit UNKNOWN level; development-fitted one-hot encoding
+D9,triage_temperature_c,21190,5.3032,114,development-median imputation and standardization
+D10,ams_flag_narrow,0,0.0,0,chiefcomplaint_missing separately identifies absent source text
+D10,chiefcomplaint_missing,8,0.002,0,explicit binary missingness indicator

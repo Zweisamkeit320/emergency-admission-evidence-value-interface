@@ -62,7 +62,7 @@ The replay writes `results_rerun/`. A successful run must recover:
 
 ## Directory map
 
-- `code/`: decision-layer and conditional patient-layer code.
+- `code/`: decision-layer and credential-gated patient-layer code.
 - `data/`: deidentified panel inputs, aggregate patient-evidence weights,
   model specification, and the feature-to-domain dictionary.
 - `results_reference/`: full-precision reference outputs reported or used in

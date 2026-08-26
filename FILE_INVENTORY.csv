@@ -10,8 +10,10 @@ data/first_encounter_ddcdw_comparison.csv,2799
 data/first_encounter_explanation_ddcdw.csv,2268
 data/first_encounter_explanation_ddcdw_bootstrap.csv,217358
 data/first_encounter_explanation_provenance.json,1088
+data/first_encounter_internal_evaluation_performance.csv,3447
 data/grouped_model_permutation_weights.csv,3583
 data/grouped_treeshap_weights.csv,2152
+data/missingness_invalid_value_summary.csv,3005
 data/panel_A_criterion_weak_orders.csv,1278
 data/panel_A_linguistic_ratings.csv,8306
 data/panel_A_sna_edges.csv,9743
@@ -21,10 +23,10 @@ data/panel_B_sna_edges.csv,13232
 data/patient_evidence_weight_specifications.csv,7056
 data/patient_model_specification.json,4149
 docs/DATA_DICTIONARY.md,1954
-docs/REPRODUCIBILITY_SCOPE.md,1888
+docs/REPRODUCIBILITY_SCOPE.md,1897
 environment.yml,319
 LICENSE,538
-README.md,3542
+README.md,3547
 requirements.txt,136
 results_reference/alternative_attribution_sensitivity_summary.csv,511
 results_reference/attribution_weight_concordance.csv,352
