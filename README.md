@@ -4,6 +4,8 @@ This repository accompanies the manuscript **“From emergency admission
 prediction to hospital priorities: an auditable evidence–value interface for
 pre-implementation screening of resource directions.”**
 
+Stable public repository: https://github.com/Zweisamkeit320/emergency-admission-evidence-value-interface
+
 The public package supports a direct replay of the decision layer from
 deidentified panel inputs and aggregate patient-evidence weights. It does not
 redistribute MIMIC-IV/MIMIC-IV-ED patient rows, derived patient-level feature
@@ -79,4 +81,3 @@ public repository.
 This release reproduces the decision layer and supplies aggregate evidence for
 the patient layer. It is not an external validation or an implementation-effect
 evaluation.
-
