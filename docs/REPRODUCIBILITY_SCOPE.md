@@ -32,6 +32,12 @@ feature table from raw MIMIC relations is not claimed in this release.
 ## Interpretation boundaries
 
 - DD-CDW is grouped marginal permutation importance under Brier loss.
+- The patient-evidence layer comes from 2011–2019 MIMIC data; the 2025–2026
+  Dalian panels supplied value judgments, not patient data or an external
+  validation cohort.
+- DD-CDW is model-dependence evidence for demonstrating the cross-source
+  interface, not a local demand estimate for either panel hospital. Local use
+  requires re-estimation and validation with a target-hospital patient cohort.
 - The logistic grouped PFI and grouped TreeSHAP analyses are sensitivity
   specifications, not replacements for the primary analysis.
 - Identification bounds are not confidence intervals or probabilities.
@@ -39,3 +45,8 @@ feature table from raw MIMIC relations is not claimed in this release.
   analytical set, not cross-hospital guarantees.
 - A1–A5 are combinable preimplementation screening directions, not mutually
   exclusive procurement packages or implemented interventions.
+- A5 is an enabling information-and-preparedness layer and is reported
+  separately from the A1–A4 direct-strategy order.
+- A3's position is conditional on patient-domain coverage criteria; the replay
+  does not estimate waiting-time, boarding, capacity, staffing, cost, safety,
+  or throughput effects.

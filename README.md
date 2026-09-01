@@ -1,8 +1,8 @@
-# v5.9.6 decision-layer reproduction package
+# v1.0.2 decision-layer reproduction package
 
 This repository accompanies the manuscript **“From emergency admission
-prediction to hospital priorities: an auditable evidence–value interface for
-pre-implementation screening of resource directions.”**
+prediction to candidate resource-direction screening: an auditable
+evidence–value interface.”**
 
 Stable public repository: https://github.com/Zweisamkeit320/emergency-admission-evidence-value-interface
 
@@ -37,6 +37,18 @@ end-to-end patient-layer rerun requires authorized MIMIC-IV/MIMIC-IV-ED data
 and the corresponding engineered feature table. The public package starts the
 patient-model pipeline from that feature table; it does not claim to reconstruct
 the table from raw MIMIC relations.
+
+## Cross-source transportability boundary
+
+The patient-evidence layer uses 2011–2019 MIMIC-IV/MIMIC-IV-ED data from the
+Beth Israel Deaconess Medical Center data ecosystem. The hospital-value layer
+uses two separately convened, non-overlapping panels in Dalian, China, convened
+in 2025–2026. The panel hospitals supplied no patient data, and the MIMIC model
+was not externally validated in either hospital. DD-CDW therefore demonstrates
+how domain-level model-dependence evidence can enter the interface; it is not
+an estimate of current patient demand in the panel hospitals. Operational use
+requires the patient-evidence layer to be re-estimated and validated in the
+target hospital's local cohort.
 
 See `docs/REPRODUCIBILITY_SCOPE.md` and `docs/DATA_DICTIONARY.md` for details.
 
@@ -79,5 +91,6 @@ public repository.
 ## Status
 
 This release reproduces the decision layer and supplies aggregate evidence for
-the patient layer. It is not an external validation or an implementation-effect
+the patient layer. It supports candidate resource-direction screening, not
+external validation, final resource allocation, or implementation-effect
 evaluation.
