@@ -1,4 +1,4 @@
-# v1.0.2 decision-layer reproduction package
+# v1.0.3 aggregate decision-layer reproduction package
 
 This repository accompanies the manuscript **“From emergency admission
 prediction to candidate resource-direction screening: an auditable
@@ -6,15 +6,17 @@ evidence–value interface.”**
 
 Stable public repository: https://github.com/Zweisamkeit320/emergency-admission-evidence-value-interface
 
-The public package supports a direct replay of the decision layer from
-deidentified panel inputs and aggregate patient-evidence weights. It does not
-redistribute MIMIC-IV/MIMIC-IV-ED patient rows, derived patient-level feature
-tables, or fitted model objects.
+The public package supports an aggregate decision-layer replay from panel-level
+criterion weights, 100 aggregate direction-by-domain utility cells, and four
+aggregate patient-evidence weight specifications. It does not redistribute
+participant-level hospital-panel records, MIMIC-IV/MIMIC-IV-ED patient rows,
+derived patient-level feature tables, or fitted model objects.
 
 ## What can be replayed directly
 
-- Fuzzy RANCOM panel-value weights from 100 weak-order records per panel.
-- Paired PLTS/T2NN representation, Rough-region propagation, and all 100
+- Combination of released aggregate panel-value and patient-evidence weights at
+  the declared `lambda=0.50` setting.
+- Interval-SPOTIS propagation from all 100 released aggregate
   panel-by-direction-by-domain utility cells.
 - Interval-SPOTIS nominal rankings and necessary/possible preferences.
 - The nine cross-panel primary DD-CDW necessary-preference certificates.
@@ -74,9 +76,10 @@ The replay writes `results_rerun/`. A successful run must recover:
 
 ## Directory map
 
-- `code/`: decision-layer and credential-gated patient-layer code.
-- `data/`: deidentified panel inputs, aggregate patient-evidence weights,
-  model specification, and the feature-to-domain dictionary.
+- `code/`: aggregate decision-layer and credential-gated patient-layer code.
+- `data/`: aggregate panel-value weights, aggregate utility cells, aggregate
+  patient-evidence weights, model specifications, and the feature-to-domain
+  dictionary.
 - `results_reference/`: full-precision reference outputs reported or used in
   sensitivity checks.
 - `tests/`: automated replay checks.
@@ -90,7 +93,8 @@ public repository.
 
 ## Status
 
-This release reproduces the decision layer and supplies aggregate evidence for
-the patient layer. It supports candidate resource-direction screening, not
-external validation, final resource allocation, or implementation-effect
-evaluation.
+This release reproduces the decision layer from frozen aggregate panel objects
+and supplies aggregate evidence for the patient layer. It does not re-estimate
+Fuzzy RANCOM weights or PLTS/T2NN/Rough utilities from participant-level panel
+records. It supports candidate resource-direction screening, not external
+validation, final resource allocation, or implementation-effect evaluation.

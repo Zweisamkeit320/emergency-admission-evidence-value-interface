@@ -26,6 +26,9 @@ def test_decision_layer_replay(tmp_path: Path) -> None:
         (tmp_path / "full_precision_sensitivity_status.json").read_text(encoding="utf-8")
     )
     assert status["status"] == "PASS"
+    assert status["public_panel_data_level"] == "aggregate only"
+    assert status["participant_level_panel_aggregation_recomputed"] is False
+    assert status["aggregate_decision_layer_recomputed"] is True
 
     summary = pd.read_csv(tmp_path / "alternative_attribution_sensitivity_summary.csv")
     primary = summary.loc[summary["analysis"] == "primary_ddcdw"].iloc[0]
@@ -49,3 +52,13 @@ def test_decision_layer_replay(tmp_path: Path) -> None:
     assert not utilities.duplicated(["panel", "alternative_id", "criterion_id"]).any()
     assert (utilities["u_lower"] <= utilities["u0"]).all()
     assert (utilities["u0"] <= utilities["u_upper"]).all()
+
+    reference = pd.read_csv(ROOT / "results_reference" / "decision_rankings_all_weight_specs.csv")
+    replayed = pd.read_csv(tmp_path / "decision_rankings_all_weight_specs.csv")
+    keys = ["analysis", "panel", "alternative_id"]
+    merged = reference.merge(replayed, on=keys, suffixes=("_reference", "_replayed"))
+    assert len(merged) == len(reference) == len(replayed)
+    for column in ("spotis_D0", "spotis_D_lower", "spotis_D_upper"):
+        difference = (merged[f"{column}_reference"] - merged[f"{column}_replayed"]).abs()
+        assert difference.max() < 1e-12
+    assert (merged["rank_reference"] == merged["rank_replayed"]).all()

@@ -1,12 +1,18 @@
 # Reproducibility scope
 
-## Direct public replay
+## Direct aggregate public replay
 
-The public inputs are sufficient to recompute panel-value weights, paired
-linguistic utilities, interval distances, rankings, pairwise relations, and
-cross-panel necessary-preference certificates. They also support propagation
-of four declared patient-evidence specifications through the same decision
-layer.
+The public inputs are sufficient to recompute combined criterion weights,
+interval distances, rankings, pairwise relations, and cross-panel
+necessary-preference certificates from frozen aggregate panel-value weights
+and 100 aggregate utility cells. They also support propagation of four declared
+patient-evidence specifications through the same decision layer.
+
+Participant-level weak orders, linguistic ratings, and SNA edges are not part
+of the public release. Consequently, the public replay does not re-estimate
+Fuzzy RANCOM weights or reconstruct PLTS/T2NN/Rough utilities from individual
+panel responses. The released aggregate objects are sufficient for the
+reported interval-SPOTIS rankings and preference certificates.
 
 ## Credential-gated patient-layer replay
 
@@ -21,7 +27,8 @@ The public repository does not contain:
 - MIMIC-IV or MIMIC-IV-ED source rows;
 - derived patient-level feature tables or patient-level permutation deltas;
 - fitted model objects;
-- direct identifiers, participant names, signatures, or role-to-person maps;
+- participant-level panel records, direct identifiers, participant names,
+  signatures, or role-to-person maps;
 - the exploratory Route-B stress-test archive.
 
 The public patient-model code therefore supports a credential-gated rerun by a

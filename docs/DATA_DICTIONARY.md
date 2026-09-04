@@ -1,19 +1,16 @@
 # Public data dictionary
 
-## Panel inputs
+## Aggregate panel inputs
 
-- `panel_A_criterion_weak_orders.csv` and
-  `panel_B_criterion_weak_orders.csv`: 100 deidentified
-  participant-by-domain final weak-order records per panel.
-- `panel_A_linguistic_ratings.csv` and
-  `panel_B_linguistic_ratings.csv`: 500 deidentified
-  participant-by-direction-by-domain linguistic ratings per panel.
-- `panel_A_sna_edges.csv` and `panel_B_sna_edges.csv`: 400 computational SNA
-  cells per panel, including structural diagonal zeros. SNA does not alter the
-  primary equal-participant weighting.
+- `panel_value_weights.csv`: 2 panels × 10 domains of normalized panel-level
+  criterion weights used in the primary equal-participant analysis.
+- `aggregate_utility_cells.csv`: 2 panels × 5 candidate directions × 10 domains
+  of aggregate nominal utility and interval endpoints, with aggregate
+  diagnostic columns retained for traceability.
 
-Participant codes (`DM1`–`DM10`) are analysis labels and do not identify a
-person. No participant role roster is supplied or inferred.
+No participant codes, individual weak orders, individual linguistic ratings,
+or individual SNA edges are included. The public replay therefore begins at
+the frozen aggregate panel objects.
 
 ## Patient-evidence inputs
 
@@ -39,4 +36,3 @@ person. No participant role roster is supplied or inferred.
   result used in the supplementary manuscript table.
 - `attribution_weight_concordance.csv`: Spearman, Kendall, and top-five overlap
   against primary DD-CDW.
-

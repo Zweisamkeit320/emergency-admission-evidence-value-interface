@@ -1,4 +1,4 @@
-"""One-command replay of the public v5.9.6 decision-layer analyses."""
+"""One-command replay of the public aggregate decision-layer analyses."""
 
 from __future__ import annotations
 
@@ -22,23 +22,15 @@ def main() -> int:
     command = [
         sys.executable,
         "-B",
-        str(root / "code" / "replay_decision_layer.py"),
+        str(root / "code" / "replay_aggregate_decision_layer.py"),
         "--core-dir",
         str(root / "code"),
-        "--panel-a-importance",
-        str(root / "data" / "panel_A_criterion_weak_orders.csv"),
-        "--panel-a-ratings",
-        str(root / "data" / "panel_A_linguistic_ratings.csv"),
-        "--panel-b-importance",
-        str(root / "data" / "panel_B_criterion_weak_orders.csv"),
-        "--panel-b-ratings",
-        str(root / "data" / "panel_B_linguistic_ratings.csv"),
-        "--grouped-weights",
-        str(root / "data" / "grouped_model_permutation_weights.csv"),
-        "--group-shap-weights",
-        str(root / "data" / "grouped_treeshap_weights.csv"),
-        "--first-encounter-weights",
-        str(root / "data" / "first_encounter_explanation_ddcdw.csv"),
+        "--panel-value-weights",
+        str(root / "data" / "panel_value_weights.csv"),
+        "--aggregate-utility-cells",
+        str(root / "data" / "aggregate_utility_cells.csv"),
+        "--patient-evidence-weights",
+        str(root / "data" / "patient_evidence_weight_specifications.csv"),
         "--output-dir",
         str(output),
     ]
